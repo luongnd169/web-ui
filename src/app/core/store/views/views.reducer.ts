@@ -32,6 +32,8 @@ export function viewsReducer(state: ViewsState = initialViewsState, action: View
       return {...state, config: action.payload.config};
     case ViewsActionType.CHANGE_POSTIT_CONFIG:
       return {...state, config: {...state.config, postit: action.payload.config}};
+    case ViewsActionType.CHANGE_KANBANBOARD_CONFIG:
+      return {...state, config: {...state.config, kanbanboard: action.payload.config}};
     case ViewsActionType.CHANGE_SEARCH_CONFIG:
       return {...state, config: {...state.config, search: action.payload.config}};
     case ViewsActionType.CHANGE_SMARTDOC_CONFIG:

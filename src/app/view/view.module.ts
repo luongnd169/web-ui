@@ -24,6 +24,7 @@ import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {OverwriteViewDialogComponent} from './overwrite-dialog/overwrite-view-dialog.component';
 import {PostItPerspectiveModule} from './perspectives/post-it/post-it-perspective.module';
+import {KanbanBoardPerspectiveModule} from './perspectives/kanban-board/kanban-board-perspective.module';
 import {SearchPerspectiveModule} from './perspectives/search/search-perspective.module';
 import {SmartDocPerspectiveModule} from './perspectives/smartdoc/smartdoc-perspective.module';
 import {TablePerspectiveModule} from './perspectives/table/table-perspective.module';
@@ -40,6 +41,7 @@ import {ViewComponent} from './view.component';
     FormsModule,
     RouterModule,
     PostItPerspectiveModule,
+    KanbanBoardPerspectiveModule,
     SearchPerspectiveModule,
     TablePerspectiveModule,
     Table2PerspectiveModule,

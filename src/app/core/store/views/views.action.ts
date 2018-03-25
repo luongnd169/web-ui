@@ -21,7 +21,7 @@ import {Action} from '@ngrx/store';
 import {QueryModel} from '../navigation/query.model';
 import {SmartDocModel} from '../smartdoc/smartdoc.model';
 import {TableConfig} from '../tables/table.model';
-import {PostItConfigModel, SearchConfigModel, TableConfigModel, ViewConfigModel, ViewModel} from './view.model';
+import {PostItConfigModel, SearchConfigModel, TableConfigModel, ViewConfigModel, ViewModel, KanbanBoardConfigModel} from './view.model';
 
 export enum ViewsActionType {
 
@@ -40,6 +40,7 @@ export enum ViewsActionType {
 
   CHANGE_CONFIG = '[Views] Change Config',
   CHANGE_POSTIT_CONFIG = '[Views] Change Post-it Config',
+  CHANGE_KANBANBOARD_CONFIG = '[Views] Change Kanban-board Config',
   CHANGE_SEARCH_CONFIG = '[Views] Change Search Config',
   CHANGE_SMARTDOC_CONFIG = '[Views] Change Smart Document Config',
   CHANGE_TABLE_CONFIG = '[Views] Change Table Config',
@@ -135,6 +136,13 @@ export namespace ViewsAction {
     }
   }
 
+  export class ChangeKanbanBoardConfig implements Action {
+    public readonly type = ViewsActionType.CHANGE_KANBANBOARD_CONFIG;
+
+    public constructor(public payload: { config: KanbanBoardConfigModel }) {
+    }
+  }
+
   export class ChangeSearchConfig implements Action {
     public readonly type = ViewsActionType.CHANGE_SEARCH_CONFIG;
 
@@ -167,13 +175,14 @@ export namespace ViewsAction {
     public readonly type = ViewsActionType.CLEAR;
 
     public constructor() {
+      
     }
   }
 
   export type All = GetByCode | GetSuccess | GetFailure |
     Create | CreateSuccess | CreateFailure |
     Update | UpdateSuccess | UpdateFailure |
-    ChangeConfig | ChangePostItConfig | ChangeSearchConfig | ChangeSmartDocConfig | ChangeTableConfig | ChangeTable2Config |
+    ChangeConfig | ChangePostItConfig | ChangeKanbanBoardConfig | ChangeSearchConfig | ChangeSmartDocConfig | ChangeTableConfig | ChangeTable2Config |
     Clear;
 
 }

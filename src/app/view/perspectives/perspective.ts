@@ -19,6 +19,7 @@
 
 export enum Perspective {
   PostIt = 'postit',
+  KanbanBoard = 'kanbanboard',
   Search = 'search',
   SmartDoc = 'smartdoc',
   Table = 'table',
@@ -27,6 +28,7 @@ export enum Perspective {
 
 export const perspectivesMap: { [id: string]: Perspective } = {
   [Perspective.PostIt]: Perspective.PostIt,
+  [Perspective.KanbanBoard]: Perspective.KanbanBoard,
   [Perspective.Search]: Perspective.Search,
   [Perspective.SmartDoc]: Perspective.SmartDoc,
   [Perspective.Table]: Perspective.Table,
@@ -35,6 +37,7 @@ export const perspectivesMap: { [id: string]: Perspective } = {
 
 export const perspectiveIconsMap: { [id: string]: string } = {
   [Perspective.PostIt]: 'far fa-sticky-note',
+  [Perspective.KanbanBoard]: 'far fa-tasks',
   [Perspective.Search]: 'far fa-search',
   [Perspective.SmartDoc]: 'far fa-file-alt',
   [Perspective.Table]: 'far fa-table',
